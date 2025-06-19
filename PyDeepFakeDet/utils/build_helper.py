@@ -18,8 +18,10 @@ def build_model(cfg):
     name = model_cfg['MODEL_NAME']
     logger.info('MODEL_NAME: ' + name)
     model = MODEL_REGISTRY.get(name)(model_cfg)
-    assert torch.cuda.is_available(), "Cuda is not available."
-    model = model.cuda()
+    # assert torch.cuda.is_available(), "Cuda is not available."
+    # model = model.cuda()
+    device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+    model = model.to(device)
     if cfg['NUM_GPUS'] > 1:
         model = torch.nn.parallel.DistributedDataParallel(
             module=model,

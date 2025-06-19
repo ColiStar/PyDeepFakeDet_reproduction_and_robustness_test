@@ -39,7 +39,11 @@ def init_process_group(
     init_method,
     dist_backend="nccl",
 ):
-    torch.cuda.set_device(local_rank)
+    # torch.cuda.set_device(local_rank)
+    if torch.cuda.is_available():
+        torch.cuda.set_device(local_rank)
+    else:
+        dist_backend = "gloo"
     proc_rank = local_rank + shard_id * local_world_size
     world_size = local_world_size * num_shards
     try:

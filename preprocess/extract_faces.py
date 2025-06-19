@@ -74,8 +74,9 @@ def can_seg(img_path, save_path, model=None, scale=1.3):
 
 
 def solve(process_id, raw_list):
-    device = 'cuda:%d' % process_id
-    model = get_model("resnet50_2020-07-20", max_size=1024, device=device)
+    # device = 'cuda:%d' % process_id
+    device = 'cpu'
+    model = get_model("resnet50_2020-07-20", max_size=1024, device='cpu')
     model.eval()
     new_list = []
     check = 20
