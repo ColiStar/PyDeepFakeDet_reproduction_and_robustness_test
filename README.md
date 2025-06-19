@@ -1,10 +1,9 @@
 # PyDeepFakeDet Reproduction and Robustness Test
 
-This repository reproduces the M2TR model from the paper [M2TR: Multi-modal Multi-scale Transformer for Deepfake Detection](https://arxiv.org/abs/2104.09770), based on the official implementation [wdrink/PyDeepFakeDet](https://github.com/wdrink/PyDeepFakeDet), and further explores the robustness of the model under common image perturbations.
+This repository reproduces the M2TR model from the paper [M2TR: Multi-modal Multi-scale Transformer for Deepfake Detection](https://arxiv.org/abs/2104.09770), based on the official implementation [wdrink/PyDeepFakeDet](https://github.com/wdrink/PyDeepFakeDet). Some parts of the code have been modified to ensure proper execution.
+We further explores the robustness of the model under common image perturbations, and also include comparative results with the Xception model and document our attempts with LSDA.
 
-We also include comparative results with the Xception model and document our attempts with LSDA.
-
-> **Dataset**: FaceForensics++ (FF++) subset  c23
+> **Dataset**: FaceForensics++ (FF++) subset
 > **Models**: M2TR (main), Xception (baseline)
 
 ---
@@ -34,7 +33,7 @@ We also include comparative results with the Xception model and document our att
 
 ---
 
-## ✅ Reproduction Results (M2TR)
+## Reproduction Results (M2TR)
 
 | Metric     | Accuracy | AUC   |
 |------------|----------|-------|
